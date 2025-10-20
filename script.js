@@ -34,18 +34,18 @@ window.addEventListener('scroll', () => {
 
 // Video card hover effects
 document.querySelectorAll('.video-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-10px)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0)';
     });
 });
 
 // Play button functionality
 document.querySelectorAll('.play-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         // Placeholder for video playback
         alert('Funcionalidad de video - Aquí se reproduciría el video real');
     });
@@ -53,7 +53,7 @@ document.querySelectorAll('.play-btn').forEach(btn => {
 
 // CTA button functionality
 document.querySelectorAll('.cta-btn, .contratar-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         // Scroll to contact section
         document.getElementById('contacto').scrollIntoView({
             behavior: 'smooth'
@@ -87,7 +87,7 @@ document.querySelectorAll('.service-card, .video-card').forEach(el => {
 // WhatsApp button functionality
 const whatsappBtn = document.querySelector('.whatsapp-btn');
 if (whatsappBtn) {
-    whatsappBtn.addEventListener('click', function(e) {
+    whatsappBtn.addEventListener('click', function (e) {
         e.preventDefault();
         window.open('https://wa.me/584243311814', '_blank');
     });
@@ -105,7 +105,7 @@ sections.forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(30px)';
     section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-    
+
     observer.observe(section);
 });
 
@@ -113,7 +113,7 @@ sections.forEach(section => {
 function animateCounter(element, target, duration = 2000) {
     let start = 0;
     const increment = target / (duration / 16);
-    
+
     function updateCounter() {
         start += increment;
         if (start < target) {
@@ -123,7 +123,7 @@ function animateCounter(element, target, duration = 2000) {
             element.textContent = target;
         }
     }
-    
+
     updateCounter();
 }
 
