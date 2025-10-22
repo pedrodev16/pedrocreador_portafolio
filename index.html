@@ -1,290 +1,166 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PedroCreaciones - Editor de Videos Profesional</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Pedro Creaciones | Editor de Video Profesional</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#06b6d4',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <!-- Intro Animation -->
-    <div class="intro-overlay" id="introOverlay">
-        <div class="intro-logo">
-            <div class="logo-text">PedroCreaciones</div>
-            <div class="logo-subtitle">Editor de Videos</div>
-        </div>
-    </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">PedroCreaciones</div>
-            <div class="nav-menu">
-                <a href="#inicio" class="nav-link">Inicio</a>
-                <a href="#galeria" class="nav-link">Galería</a>
-                <a href="#servicios" class="nav-link">Servicios</a>
-                <a href="#contacto" class="nav-link">Contacto</a>
+<body class="bg-dark text-gray-100 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-dark/80 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+            <a href="#inicio" class="text-xl font-bold text-primary">PedroCreaciones</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio" class="hover:text-primary transition">Inicio</a>
+                <a href="#galeria" class="hover:text-primary transition">Galería</a>
+                <a href="#servicios" class="hover:text-primary transition">Servicios</a>
+                <a href="#contacto" class="hover:text-primary transition">Contacto</a>
             </div>
-            <button class="contratar-btn">Contratar Ahora</button>
+            <a href="https://wa.me/584243311814"
+                class="bg-primary hover:bg-cyan-500 text-dark font-bold py-2 px-5 rounded-full flex items-center gap-2 transition">
+                <i data-feather="message-circle" class="w-4 h-4"></i> Contratar
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="emoji">🎥</span> PedroCreaciones — Editor de Videos Profesional
-            </h1>
-            <p class="hero-subtitle">Transformo tus ideas en contenido visual impactante</p>
-            <div class="hero-description">
-                <p>Hola, soy Pedro Oropeza, editor de video venezolano especializado en formatos verticales (Reels, Shorts, TikTok) y horizontales (YouTube, videoclips, comerciales).</p>
-            </div>
-            <div class="hero-buttons">
-                <button class="cta-btn primary">Ver mi trabajo</button>
-                <button class="cta-btn secondary">Contratar servicios</button>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="floating-icon icon-1"><i class="fas fa-video"></i></div>
-            <div class="floating-icon icon-2"><i class="fas fa-play-circle"></i></div>
-            <div class="floating-icon icon-3"><i class="fas fa-edit"></i></div>
-        </div>
-    </section>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Video Gallery -->
-    <section id="galeria" class="gallery">
-        <div class="container">
-            <h2 class="section-title">Mi Trabajo</h2>
-            <p class="section-subtitle">Videos verticales y horizontales de alta calidad</p>
-            
+        <!-- Hero Section -->
+        <section id="inicio" class="py-32 flex flex-col items-center text-center">
+            <div
+                class="w-32 h-32 md:w-40 md:h-40 bg-primary rounded-full flex items-center justify-center mb-8 shadow-lg">
+                <span class="text-5xl md:text-6xl font-bold text-dark">PC</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Pedro Creaciones</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+                Hola, soy Pedro Oropeza, editor de video venezolano especializado en formatos verticales (Reels, Shorts,
+                TikTok) y
+                horizontales (YouTube, videoclips, comerciales).
+            </p>
+            <div class="flex gap-4">
+                <a href="https://wa.me/584243311814"
+                    class="bg-primary hover:bg-cyan-500 text-dark font-bold py-3 px-6 rounded-full flex items-center gap-2 transition">
+                    <i data-feather="message-circle"></i> WhatsApp
+                </a>
+                <a href="mailto:pedro@pedrocreaciones.com"
+                    class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 transition">
+                    <i data-feather="mail"></i> Email
+                </a>
+            </div>
+        </section>
+
+        <!-- Galería -->
+        <section id="galeria" class="py-20">
+            <h2 class="text-3xl font-bold mb-12 text-center">Portafolio</h2>
+
             <!-- Vertical Videos -->
-            <div class="gallery-section">
-                <h3 class="gallery-title">Videos Verticales (9:16)</h3>
-                <div class="video-grid vertical">
-                    <div class="video-card" data-video="vertical1">
-                        <div class="video-placeholder vertical">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <div class="video-overlay">
-                            <button class="play-btn" data-video="vertical1">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                        <div class="video-info">
-                            <h4>Reel Promocional</h4>
-                            <p>Formato vertical para Instagram</p>
-                        </div>
-                    </div>
-                    
-                    <div class="video-card" data-video="vertical2">
-                        <div class="video-placeholder vertical">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <div class="video-overlay">
-                            <button class="play-btn" data-video="vertical2">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                        <div class="video-info">
-                            <h4>TikTok Viral</h4>
-                            <p>Contenido dinámico para TikTok</p>
-                        </div>
-                    </div>
-                    
-                    <div class="video-card" data-video="vertical3">
-                        <div class="video-placeholder vertical">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <div class="video-overlay">
-                            <button class="play-btn" data-video="vertical3">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                        <div class="video-info">
-                            <h4>YouTube Shorts</h4>
-                            <p>Formato corto para YouTube</p>
-                        </div>
-                    </div>
+            <h3 class="text-xl font-semibold mb-6 text-primary">Contenido Vertical (9:16)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <div class="aspect-[9/16] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/PEgo3oz4o30"
+                        title="Reel Promocional" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="aspect-[9/16] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/dY4TGfjeb7k" title="TikTok Viral"
+                        frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="aspect-[9/16] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube Shorts"
+                        frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
 
             <!-- Horizontal Videos -->
-            <div class="gallery-section">
-                <h3 class="gallery-title">Videos Horizontales (16:9)</h3>
-                <div class="video-grid horizontal">
-                    <div class="video-card" data-video="horizontal1">
-                        <div class="video-placeholder horizontal">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <div class="video-overlay">
-                            <button class="play-btn" data-video="horizontal1">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                        <div class="video-info">
-                            <h4>Videoclip Musical</h4>
-                            <p>Producción musical profesional</p>
-                        </div>
-                    </div>
-                    
-                    <div class="video-card" data-video="horizontal2">
-                        <div class="video-placeholder horizontal">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <div class="video-overlay">
-                            <button class="play-btn" data-video="horizontal2">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                        <div class="video-info">
-                            <h4>Comercial Publicitario</h4>
-                            <p>Spot para redes sociales</p>
-                        </div>
-                    </div>
-                    
-                    <div class="video-card" data-video="horizontal3">
-                        <div class="video-placeholder horizontal">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <div class="video-overlay">
-                            <button class="play-btn" data-video="horizontal3">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                        <div class="video-info">
-                            <h4>Video Corporativo</h4>
-                            <p>Contenido para empresas</p>
-                        </div>
-                    </div>
+            <h3 class="text-xl font-semibold mb-6 text-primary">Contenido Horizontal (16:9)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="aspect-[16/9] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="Videoclip Musical" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="aspect-[16/9] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="Comercial Publicitario" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="aspect-[16/9] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/DnNcm2tQPgs?si=kNp8LZIQzryZHnce"
+                        title="Video Corporativo" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section id="servicios" class="services">
-        <div class="container">
-            <h2 class="section-title">Servicios</h2>
-            <p class="section-subtitle">Especializado en edición de video profesional</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-share-alt"></i>
-                    </div>
-                    <h3>Edición para redes sociales</h3>
-                    <p>Contenido optimizado para Instagram, TikTok, YouTube y más</p>
+        <!-- Servicios -->
+        <section id="servicios" class="py-20">
+            <h2 class="text-3xl font-bold mb-12 text-center">Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
+                    <i data-feather="share-2" class="w-10 h-10 mx-auto text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">Edición para Redes Sociales</h3>
+                    <p class="text-gray-400 text-sm">Contenido optimizado para Instagram, TikTok y YouTube.</p>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <h3>Videoclips musicales</h3>
-                    <p>Producción audiovisual para artistas y bandas</p>
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
+                    <i data-feather="music" class="w-10 h-10 mx-auto text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">Videoclips Musicales</h3>
+                    <p class="text-gray-400 text-sm">Producción audiovisual profesional para artistas.</p>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-closed-captioning"></i>
-                    </div>
-                    <h3>Cortes y subtítulos automáticos</h3>
-                    <p>Edición rápida con subtítulos dinámicos y atractivos</p>
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
+                    <i data-feather="type" class="w-10 h-10 mx-auto text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">Subtítulos y Cortes</h3>
+                    <p class="text-gray-400 text-sm">Cortes automáticos y subtítulos dinámicos.</p>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Colorización y corrección de audio</h3>
-                    <p>Mejora visual y sonora profesional de tus videos</p>
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
+                    <i data-feather="sliders" class="w-10 h-10 mx-auto text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">Colorización y Sonido</h3>
+                    <p class="text-gray-400 text-sm">Corrección de color y audio de alta calidad.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <p class="section-subtitle">¿Listo para llevar tu contenido al siguiente nivel?</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>WhatsApp</h3>
-                            <p>+58 0424-3311814</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>pedro@pedrocreaciones.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Ubicación</h3>
-                            <p>Venezuela</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-actions">
-                    <a href="https://wa.me/584243311814" target="_blank" class="whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i>
-                        Contactar por WhatsApp
+        <!-- Contacto -->
+        <section id="contacto" class="py-20 text-center">
+            <h2 class="text-3xl font-bold mb-8">Trabajemos juntos</h2>
+            <div class="max-w-md mx-auto bg-gray-800 rounded-xl p-8 shadow-lg">
+                <div class="flex flex-col gap-4">
+                    <a href="https://wa.me/584243311814"
+                        class="bg-primary hover:bg-cyan-500 text-dark font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition">
+                        <i data-feather="message-circle"></i> +58 0424-3311814
                     </a>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                    </div>
+                    <a href="mailto:pedro@pedrocreaciones.com"
+                        class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition">
+                        <i data-feather="mail"></i> pedro@pedrocreaciones.com
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 PedroCreaciones — Todos los derechos reservados.</p>
-            <div class="footer-links">
-                <a href="#inicio">Inicio</a>
-                <a href="#galeria">Galería</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#contacto">Contacto</a>
-            </div>
-        </div>
+    <footer class="bg-gray-900 py-8 border-t border-gray-800 text-center">
+        <p class="text-gray-400 text-sm">&copy; 2025 PedroCreaciones — Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Video Modal -->
-    <div class="video-modal" id="videoModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="video-container" id="videoContainer">
-                <!-- Video will be inserted here dynamically -->
-            </div>
-            <div class="modal-info">
-                <h3 id="modalTitle"></h3>
-                <p id="modalDescription"></p>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script>feather.replace();</script>
 </body>
+
 </html>

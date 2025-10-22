@@ -1,251 +1,175 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+< !DOCTYPE html >
+    <html lang="es" class="scroll-smooth">
+
+        <head>
+            <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Pedro Creaciones | Editor de Video Profesional</title>
+                    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <script src="https://unpkg.com/feather-icons"></script>
+                        <script>
+                            tailwind.config = {
+                                theme: {
+                                extend: {
+                                colors: {
+                                primary: '#06b6d4',
+                            dark: '#0f172a',
+          },
+                            fontFamily: {
+                                sans: ['Inter', 'sans-serif'],
+          },
         }
-    });
-});
-
-// Intro animation
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const introOverlay = document.getElementById('introOverlay');
-        if (introOverlay) {
-            introOverlay.classList.add('hidden');
-        }
-    }, 3000);
-});
-
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-    } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+      }
     }
-});
+                        </script>
+                    </head>
 
-// Video card hover effects
-document.querySelectorAll('.video-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-    });
-});
+                    <body class="bg-dark text-gray-100 font-sans antialiased">
 
-// Play button functionality
-document.querySelectorAll('.play-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        // Placeholder for video playback
-        alert('Funcionalidad de video - Aquí se reproduciría el video real');
-    });
-});
+                        <!-- Navbar -->
+                        <nav class="fixed w-full bg-dark/80 backdrop-blur-md z-50 border-b border-gray-800">
+                            <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+                                <a href="#inicio" class="text-xl font-bold text-primary">PedroCreaciones</a>
+                                <div class="hidden md:flex space-x-8">
+                                    <a href="#inicio" class="hover:text-primary transition">Inicio</a>
+                                    <a href="#galeria" class="hover:text-primary transition">Galería</a>
+                                    <a href="#servicios" class="hover:text-primary transition">Servicios</a>
+                                    <a href="#contacto" class="hover:text-primary transition">Contacto</a>
+                                </div>
+                                <a href="https://wa.me/584243311814"
+                                    class="bg-primary hover:bg-cyan-500 text-dark font-bold py-2 px-5 rounded-full flex items-center gap-2 transition">
+                                    <i data-feather="message-circle" class="w-4 h-4"></i> Contratar
+                                </a>
+                            </div>
+                        </nav>
 
-// CTA button functionality
-document.querySelectorAll('.cta-btn, .contratar-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        // Scroll to contact section
-        document.getElementById('contacto').scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+                        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+                            <!-- Hero Section -->
+                            <section id="inicio" class="py-32 flex flex-col items-center text-center">
+                                <div class="w-32 h-32 md:w-40 md:h-40 bg-primary rounded-full flex items-center justify-center mb-8 shadow-lg">
+                                    <span class="text-5xl md:text-6xl font-bold text-dark">PC</span>
+                                </div>
+                                <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Pedro Creaciones</h1>
+                                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+                                    Editor de video profesional — Reels, TikTok, YouTube, comerciales y videoclips.
+                                </p>
+                                <div class="flex gap-4">
+                                    <a href="https://wa.me/584243311814"
+                                        class="bg-primary hover:bg-cyan-500 text-dark font-bold py-3 px-6 rounded-full flex items-center gap-2 transition">
+                                        <i data-feather="message-circle"></i> WhatsApp
+                                    </a>
+                                    <a href="mailto:pedro@pedrocreaciones.com"
+                                        class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 transition">
+                                        <i data-feather="mail"></i> Email
+                                    </a>
+                                </div>
+                            </section>
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+                            <!-- Galería -->
+                            <section id="galeria" class="py-20">
+                                <h2 class="text-3xl font-bold mb-12 text-center">Portafolio</h2>
 
-// Observe elements for animation
-document.querySelectorAll('.service-card, .video-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
+                                <!-- Vertical Videos -->
+                                <h3 class="text-xl font-semibold mb-6 text-primary">Contenido Vertical (9:16)</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                                    <div class="aspect-[9/16] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                                        <iframe class="w-full h-full"
+                                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                            title="Reel Promocional" frameborder="0"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="aspect-[9/16] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                                        <iframe class="w-full h-full"
+                                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                            title="TikTok Viral" frameborder="0"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="aspect-[9/16] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                                        <iframe class="w-full h-full"
+                                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                            title="YouTube Shorts" frameborder="0"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                </div>
 
-// WhatsApp button functionality
-const whatsappBtn = document.querySelector('.whatsapp-btn');
-if (whatsappBtn) {
-    whatsappBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.open('https://wa.me/584243311814', '_blank');
-    });
-}
+                                <!-- Horizontal Videos -->
+                                <h3 class="text-xl font-semibold mb-6 text-primary">Contenido Horizontal (16:9)</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="aspect-[16/9] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                                        <iframe class="w-full h-full"
+                                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                            title="Videoclip Musical" frameborder="0"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="aspect-[16/9] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                                        <iframe class="w-full h-full"
+                                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                            title="Comercial Publicitario" frameborder="0"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="aspect-[16/9] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                                        <iframe class="w-full h-full"
+                                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                            title="Video Corporativo" frameborder="0"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </section>
 
-// Mobile menu toggle (if needed)
-function toggleMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.toggle('active');
-}
+                            <!-- Servicios -->
+                            <section id="servicios" class="py-20">
+                                <h2 class="text-3xl font-bold mb-12 text-center">Servicios</h2>
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
+                                        <i data-feather="share-2" class="w-10 h-10 mx-auto text-primary mb-4"></i>
+                                        <h3 class="text-lg font-semibold mb-2">Edición para Redes Sociales</h3>
+                                        <p class="text-gray-400 text-sm">Contenido optimizado para Instagram, TikTok y YouTube.</p>
+                                    </div>
+                                    <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
+                                        <i data-feather="music" class="w-10 h-10 mx-auto text-primary mb-4"></i>
+                                        <h3 class="text-lg font-semibold mb-2">Videoclips Musicales</h3>
+                                        <p class="text-gray-400 text-sm">Producción audiovisual profesional para artistas.</p>
+                                    </div>
+                                    <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
+                                        <i data-feather="type" class="w-10 h-10 mx-auto text-primary mb-4"></i>
+                                        <h3 class="text-lg font-semibold mb-2">Subtítulos y Cortes</h3>
+                                        <p class="text-gray-400 text-sm">Cortes automáticos y subtítulos dinámicos.</p>
+                                    </div>
+                                    <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
+                                        <i data-feather="sliders" class="w-10 h-10 mx-auto text-primary mb-4"></i>
+                                        <h3 class="text-lg font-semibold mb-2">Colorización y Sonido</h3>
+                                        <p class="text-gray-400 text-sm">Corrección de color y audio de alta calidad.</p>
+                                    </div>
+                                </div>
+                            </section>
 
-// Add scroll reveal to sections
-const sections = document.querySelectorAll('section');
-sections.forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-    
-    observer.observe(section);
-});
+                            <!-- Contacto -->
+                            <section id="contacto" class="py-20 text-center">
+                                <h2 class="text-3xl font-bold mb-8">Trabajemos juntos</h2>
+                                <div class="max-w-md mx-auto bg-gray-800 rounded-xl p-8 shadow-lg">
+                                    <div class="flex flex-col gap-4">
+                                        <a href="https://wa.me/584243311814"
+                                            class="bg-primary hover:bg-cyan-500 text-dark font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition">
+                                            <i data-feather="message-circle"></i> +58 0424-3311814
+                                        </a>
+                                        <a href="mailto:pedro@pedrocreaciones.com"
+                                            class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition">
+                                            <i data-feather="mail"></i> pedro@pedrocreaciones.com
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+                        </main>
 
-// Counter animation for stats (if added)
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    
-    function updateCounter() {
-        start += increment;
-        if (start < target) {
-            element.textContent = Math.floor(start);
-            requestAnimationFrame(updateCounter);
-        } else {
-            element.textContent = target;
-        }
-    }
-    
-    updateCounter();
-}
+                        <!-- Footer -->
+                        <footer class="bg-gray-900 py-8 border-t border-gray-800 text-center">
+                            <p class="text-gray-400 text-sm">&copy; 2025 PedroCreaciones — Todos los derechos reservados.</p>
+                        </footer>
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallax = document.querySelector('.hero-visual');
-    if (parallax) {
-        parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
+                        <!-- Scripts -->
+                        <script>feather.replace();</script>
+                    </body>
 
-// Video modal functionality
-const videoModal = document.getElementById('videoModal');
-const modalClose = document.getElementById('modalClose');
-const videoContainer = document.getElementById('videoContainer');
-const modalTitle = document.getElementById('modalTitle');
-const modalDescription = document.getElementById('modalDescription');
-
-// Video content data
-const videoData = {
-    vertical1: {
-        title: 'Reel Promocional',
-        description: 'Formato vertical para Instagram con transiciones dinámicas y efectos visuales modernos.',
-        type: 'vertical',
-        src: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4' // Placeholder video
-    },
-    vertical2: {
-        title: 'TikTok Viral',
-        description: 'Contenido dinámico para TikTok con ritmo ágil y efectos de moda.',
-        type: 'vertical',
-        src: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4'
-    },
-    vertical3: {
-        title: 'YouTube Shorts',
-        description: 'Formato corto para YouTube con subtítulos animados y música pegajosa.',
-        type: 'vertical',
-        src: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4'
-    },
-    horizontal1: {
-        title: 'Videoclip Musical',
-        description: 'Producción musical profesional con sincronización perfecta y efectos visuales.',
-        type: 'horizontal',
-        src: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4'
-    },
-    horizontal2: {
-        title: 'Comercial Publicitario',
-        description: 'Spot para redes sociales con llamada a la acción efectiva y branding impactante.',
-        type: 'horizontal',
-        src: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4'
-    },
-    horizontal3: {
-        title: 'Video Corporativo',
-        description: 'Contenido para empresas con estilo profesional y mensaje claro.',
-        type: 'horizontal',
-        src: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4'
-    }
-};
-
-// Function to open modal with video
-function openModal(videoId) {
-    const videoInfo = videoData[videoId];
-    if (!videoInfo) return;
-
-    // Set modal content
-    modalTitle.textContent = videoInfo.title;
-    modalDescription.textContent = videoInfo.description;
-    
-    // Create video element
-    const video = document.createElement('video');
-    video.src = videoInfo.src;
-    video.controls = true;
-    video.autoplay = true;
-    video.loop = true;
-    
-    // Clear container and add video
-    videoContainer.innerHTML = '';
-    videoContainer.appendChild(video);
-    videoContainer.className = `video-container ${videoInfo.type}`;
-    
-    // Show modal
-    videoModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-// Function to close modal
-function closeModal() {
-    videoModal.classList.remove('active');
-    document.body.style.overflow = '';
-    
-    // Stop and remove video
-    const video = videoContainer.querySelector('video');
-    if (video) {
-        video.pause();
-        video.src = '';
-    }
-    videoContainer.innerHTML = '';
-}
-
-// Event listeners for video cards and play buttons
-document.querySelectorAll('.video-card, .play-btn').forEach(element => {
-    element.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const videoId = this.dataset.video || this.closest('[data-video]').dataset.video;
-        if (videoId) {
-            openModal(videoId);
-        }
-    });
-});
-
-// Close modal events
-modalClose.addEventListener('click', closeModal);
-
-videoModal.addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeModal();
-    }
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && videoModal.classList.contains('active')) {
-        closeModal();
-    }
-});
+                </html>
