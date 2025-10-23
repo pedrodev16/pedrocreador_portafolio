@@ -70,6 +70,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -186,8 +187,15 @@ body {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .hero-subtitle {
@@ -275,8 +283,15 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(10deg); }
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
 }
 
 /* Section Styles */
@@ -679,21 +694,21 @@ body {
         max-width: 95vw;
         max-height: 95vh;
     }
-    
+
     .video-container.vertical {
         max-width: 300px;
         max-height: 450px;
     }
-    
+
     .video-container.horizontal {
         max-width: 100%;
         max-height: 300px;
     }
-    
+
     .modal-info h3 {
         font-size: 1.2rem;
     }
-    
+
     .modal-info p {
         font-size: 0.9rem;
     }
@@ -703,7 +718,7 @@ body {
     .modal-content {
         padding: 1rem;
     }
-    
+
     .modal-close {
         top: 0.5rem;
         right: 0.5rem;
@@ -718,29 +733,29 @@ body {
     .nav-menu {
         display: none;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.2rem;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .contact-content {
         grid-template-columns: 1fr;
     }
-    
+
     .footer .container {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .footer-links {
         justify-content: center;
     }
@@ -750,16 +765,21 @@ body {
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .video-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.inicio {
+    background-image: url('img/fonfo_f.jpg');
+
 }
