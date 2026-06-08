@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pedrocreador2 | Editor de Video Profesional</title>
+    <title>pedrocreador2 | Producción Audiovisual & Desarrollo Full Stack</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
@@ -14,7 +19,8 @@
                 extend: {
                     colors: {
                         primary: '#06b6d4',
-                        dark: '#0f172a',
+                        dark: '#0b0f19', // Fondo base más oscuro y elegante
+                        cardDark: '#111827', // Color sólido y limpio para las tarjetas
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -23,145 +29,318 @@
             }
         }
     </script>
+    <style>
+        /* Ocultar barra de scroll estética para el carrusel horizontal */
+        .scrollbar-none::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-none {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 
-<body class="bg-dark text-gray-100 font-sans antialiased">
+<body class="bg-dark text-gray-100 font-sans antialiased selection:bg-primary selection:text-dark">
 
-    <!-- Navbar -->
-    <nav class="fixed w-full bg-dark/80 backdrop-blur-md z-50 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-            <a href="#inicio" class="text-xl font-bold text-primary">pedrocreador2</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#inicio" class="hover:text-primary transition">Inicio</a>
-                <a href="#galeria" class="hover:text-primary transition">Galería</a>
-                <a href="#servicios" class="hover:text-primary transition">Servicios</a>
-                <a href="#contacto" class="hover:text-primary transition">Contacto</a>
+    <nav class="fixed w-full bg-dark/70 backdrop-blur-xl z-50 border-b border-gray-800/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <a href="#inicio"
+                class="text-2xl font-black tracking-tighter text-white hover:text-primary transition group">
+                pedro<span class="text-primary group-hover:text-cyan-400 transition">creador2</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-300">
+                <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
+                <a href="#galeria" class="hover:text-white transition-colors">Portafolio</a>
+                <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
+                <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
             </div>
-            <a href="https://wa.me/584243311814"
-                class="bg-primary hover:bg-cyan-500 text-dark font-bold py-2 px-5 rounded-full flex items-center gap-2 transition">
+            <a href="https://wa.me/584243311814" target="_blank" rel="noopener noreferrer"
+                class="bg-primary hover:bg-cyan-400 text-dark font-bold text-sm py-2.5 px-6 rounded-full flex items-center gap-2 transition transform active:scale-95 shadow-lg shadow-primary/20">
                 <i data-feather="message-circle" class="w-4 h-4"></i> Contratar
             </a>
         </div>
     </nav>
 
-    <main style="background-image: url('img/fondo_f.jpg');" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div style="background-image: linear-gradient(to bottom, rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.98)), url('img/fondo_f.jpg');"
+        class="bg-cover bg-center bg-fixed w-full">
 
-        <!-- Hero Section -->
-        <section id="inicio" style="background: #101729f0;" class="inicio py-32 flex flex-col items-center text-center">
-            <div style="background-color: rgb(19 13 34);"
-                class="w-32 h-32 md:w-40 md:h-40  rounded-full flex items-center justify-center mb-8 shadow-lg">
-                <!-- <span class="text-5xl md:text-6xl font-bold text-dark">PC</span> -->
-                <img src="img/logo.png" alt="Logo Pedro Creaciones" class="w-20 h-20 md:w-24 md:h-24">
-            </div>
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">pedrocreador2</h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
-                Hola, soy Pedro Oropeza, editor de video venezolano especializado en formatos verticales (Reels, Shorts,
-                TikTok) y
-                horizontales (YouTube, videoclips, comerciales).
-            </p>
-            <div class="flex gap-4">
-                <a href="https://wa.me/584243311814"
-                    class="bg-primary hover:bg-cyan-500 text-dark font-bold py-3 px-6 rounded-full flex items-center gap-2 transition">
-                    <i data-feather="message-circle"></i> WhatsApp
-                </a>
-                <a href="mailto:pedro@pedrocreaciones.com"
-                    class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 transition">
-                    <i data-feather="mail"></i> Email
-                </a>
-            </div>
-        </section>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- Galería -->
-        <section id="galeria" style="background: #101729f0" class="py-20">
-            <h2 class="text-3xl font-bold mb-12 text-center">Portafolio</h2>
+            <section id="inicio" class="pt-40 pb-24 flex flex-col items-center text-center">
+                <div style="background-color: rgb(19, 13, 34);"
+                    class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center mb-8 shadow-2xl border border-gray-800/80 transform hover:rotate-6 transition duration-300">
+                    <img src="img/logo.png" alt="Logo Pedro Creaciones"
+                        class="w-20 h-20 md:w-24 md:h-24 object-contain">
+                </div>
 
-            <!-- Vertical Videos -->
-            <h3 class="text-xl font-semibold mb-6 text-primary">Contenido Vertical (9:16)</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                <div class="aspect-[9/16] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/PEgo3oz4o30"
-                        title="Reel Promocional" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="aspect-[9/16] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/dY4TGfjeb7k" title="TikTok Viral"
-                        frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="aspect-[9/16] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/7Ai6r0F895A" title="YouTube Shorts"
-                        frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
+                <p
+                    class="text-xs md:text-sm font-bold text-primary mb-3 uppercase tracking-widest bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">
+                    Editor de Video & Desarrollador Full Stack
+                </p>
 
-            <!-- Horizontal Videos -->
-            <h3 class="text-xl font-semibold mb-6 text-primary">Contenido Horizontal (16:9)</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="aspect-[16/9] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/fhDk3D_IkEM"
-                        title="Videoclip Musical" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="aspect-[16/9] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/1Tj4Qj_ybCE"
-                        title="Comercial Publicitario" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="aspect-[16/9] bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/DnNcm2tQPgs?si=kNp8LZIQzryZHnce"
-                        title="Video Corporativo" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
+                <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight text-white max-w-4xl">
+                    Impulsa tu marca con contenido de alto impacto y software a medida
+                </h1>
 
-        <!-- Servicios -->
-        <section id="servicios" style="background: #101729f0" class="py-20">
-            <h2 class="text-3xl font-bold mb-12 text-center">Servicios</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
-                    <i data-feather="share-2" class="w-10 h-10 mx-auto text-primary mb-4"></i>
-                    <h3 class="text-lg font-semibold mb-2">Edición para Redes Sociales</h3>
-                    <p class="text-gray-400 text-sm">Contenido optimizado para Instagram, TikTok y YouTube.</p>
-                </div>
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
-                    <i data-feather="music" class="w-10 h-10 mx-auto text-primary mb-4"></i>
-                    <h3 class="text-lg font-semibold mb-2">Videoclips Musicales</h3>
-                    <p class="text-gray-400 text-sm">Producción audiovisual profesional para artistas.</p>
-                </div>
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
-                    <i data-feather="type" class="w-10 h-10 mx-auto text-primary mb-4"></i>
-                    <h3 class="text-lg font-semibold mb-2">Subtítulos y Cortes</h3>
-                    <p class="text-gray-400 text-sm">Cortes automáticos y subtítulos dinámicos.</p>
-                </div>
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-md hover:bg-gray-700 transition">
-                    <i data-feather="sliders" class="w-10 h-10 mx-auto text-primary mb-4"></i>
-                    <h3 class="text-lg font-semibold mb-2">Colorización y Sonido</h3>
-                    <p class="text-gray-400 text-sm">Corrección de color y audio de alta calidad.</p>
-                </div>
-            </div>
-        </section>
+                <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl leading-relaxed">
+                    Hola, soy <span class="text-white font-semibold">Pedro Oropeza</span>, un profesional venezolano
+                    especializado en fusionar la producción audiovisual avanzada (formatos para redes, YouTube y
+                    videoclips) con el desarrollo técnico de software sólido.
+                </p>
 
-        <!-- Contacto -->
-        <section id="contacto" style="background: #101729f0" class="py-20 text-center">
-            <h2 class="text-3xl font-bold mb-8">Trabajemos juntos</h2>
-            <div class="max-w-md mx-auto bg-gray-800 rounded-xl p-8 shadow-lg">
-                <div class="flex flex-col gap-4">
-                    <a href="https://wa.me/584243311814"
-                        class="bg-primary hover:bg-cyan-500 text-dark font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition">
-                        <i data-feather="message-circle"></i> +58 0424-3311814
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <a href="https://wa.me/584243311814" target="_blank" rel="noopener noreferrer"
+                        class="bg-primary hover:bg-cyan-400 text-dark font-bold py-3.5 px-8 rounded-full flex items-center justify-center gap-2 transition transform hover:-translate-y-0.5 shadow-xl shadow-primary/20">
+                        <i data-feather="message-circle" class="w-5 h-5"></i> Escríbeme por WhatsApp
                     </a>
                     <a href="mailto:pedro@pedrocreaciones.com"
-                        class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition">
-                        <i data-feather="mail"></i> pedro@pedrocreaciones.com
+                        class="bg-cardDark hover:bg-gray-800 text-white font-bold py-3.5 px-8 rounded-full flex items-center justify-center gap-2 transition transform hover:-translate-y-0.5 border border-gray-800 shadow-md">
+                        <i data-feather="mail" class="w-5 h-5"></i> Enviar un Email
                     </a>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8 border-t border-gray-800 text-center">
-        <p class="text-gray-400 text-sm">&copy; 2025 PedroCreaciones — Todos los derechos reservados.</p>
+            <section id="galeria" class="py-20 border-t border-gray-800/50">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">Portafolio
+                        Seleccionado</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Una muestra de mis trabajos más recientes en producción
+                        de video vertical y horizontal.</p>
+                </div>
+
+                <div class="flex items-center gap-2 mb-6">
+                    <i data-feather="smartphone" class="w-5 h-5 text-primary"></i>
+                    <h3 class="text-xl font-bold text-white tracking-tight">Contenido Vertical (9:16)</h3>
+                </div>
+
+                <div dir="rtl" class="flex overflow-x-auto gap-5 pb-6 mb-16 snap-x snap-mandatory scrollbar-none">
+                    <div dir="ltr"
+                        class="w-52 sm:w-60 shrink-0 aspect-[9/16] bg-cardDark rounded-2xl overflow-hidden shadow-xl border border-gray-800 snap-center hover:border-primary/40 transition duration-300">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/lPLqmmAQbHA"
+                            title="YouTube Shorts" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <div dir="ltr"
+                        class="w-52 sm:w-60 shrink-0 aspect-[9/16] bg-cardDark rounded-2xl overflow-hidden shadow-xl border border-gray-800 snap-center hover:border-primary/40 transition duration-300">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/PEgo3oz4o30"
+                            title="Reel Promocional" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <div dir="ltr"
+                        class="w-52 sm:w-60 shrink-0 aspect-[9/16] bg-cardDark rounded-2xl overflow-hidden shadow-xl border border-gray-800 snap-center hover:border-primary/40 transition duration-300">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/re9thC46stA"
+                            title="TikTok Viral" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <div dir="ltr"
+                        class="w-52 sm:w-60 shrink-0 aspect-[9/16] bg-cardDark rounded-2xl overflow-hidden shadow-xl border border-gray-800 snap-center hover:border-primary/40 transition duration-300">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/dY4TGfjeb7k"
+                            title="TikTok Viral" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <div dir="ltr"
+                        class="w-52 sm:w-60 shrink-0 aspect-[9/16] bg-cardDark rounded-2xl overflow-hidden shadow-xl border border-gray-800 snap-center hover:border-primary/40 transition duration-300">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/7Ai6r0F895A"
+                            title="YouTube Shorts" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 mb-6">
+                    <i data-feather="monitor" class="w-5 h-5 text-primary"></i>
+                    <h3 class="text-xl font-bold text-white tracking-tight">Contenido Horizontal (16:9)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <div
+                        class="aspect-[16/9] bg-cardDark rounded-2xl overflow-hidden shadow-xl border border-gray-800 group hover:border-primary/40 transition duration-300">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/b1dCnohkk00"
+                            title="Videoclip Musical" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div
+                        class="aspect-[16/9] bg-cardDark rounded-2xl overflow-hidden shadow-xl border border-gray-800 group hover:border-primary/40 transition duration-300">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/PkOkBuCXny0"
+                            title="Comercial Publicitario" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div
+                        class="aspect-[16/9] bg-cardDark rounded-2xl overflow-hidden shadow-xl border border-gray-800 group hover:border-primary/40 transition duration-300">
+                        <iframe class="w-full h-full"
+                            src="https://www.youtube.com/embed/5eXS_Ek6IJ8?si=kNp8LZIQzryZHnce"
+                            title="Video Corporativo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div
+                        class="aspect-[16/9] bg-cardDark rounded-2xl overflow-hidden shadow-xl border border-gray-800 group hover:border-primary/40 transition duration-300">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/F0qNQ0Cxm9I"
+                            title="Videoclip Musical" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div
+                        class="aspect-[16/9] bg-cardDark rounded-2xl overflow-hidden shadow-xl border border-gray-800 group hover:border-primary/40 transition duration-300">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/1Tj4Qj_ybCE"
+                            title="Comercial Publicitario" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div
+                        class="aspect-[16/9] bg-cardDark rounded-2xl overflow-hidden shadow-xl border border-gray-800 group hover:border-primary/40 transition duration-300">
+                        <iframe class="w-full h-full"
+                            src="https://www.youtube.com/embed/DnNcm2tQPgs?si=kNp8LZIQzryZHnce"
+                            title="Video Corporativo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section id="servicios" class="py-20 border-t border-gray-800/50">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">Servicios
+                        Especializados</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Soluciones profesionales diseñadas para potenciar tu
+                        ecosistema digital e identidad visual.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div
+                        class="bg-cardDark/60 border border-gray-800/80 rounded-2xl p-6 shadow-xl hover:bg-cardDark hover:border-primary/50 transition duration-300 group">
+                        <div
+                            class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-dark transition duration-300">
+                            <i data-feather="share-2" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Edición para Redes</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Contenido dinámico y optimizado
+                            estructuralmente para Instagram, TikTok y YouTube.</p>
+                    </div>
+
+                    <div
+                        class="bg-cardDark/60 border border-gray-800/80 rounded-2xl p-6 shadow-xl hover:bg-cardDark hover:border-primary/50 transition duration-300 group">
+                        <div
+                            class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-dark transition duration-300">
+                            <i data-feather="music" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Videoclips Musicales</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Montaje rítmico y narrativa audiovisual
+                            profesional pensada para artistas.</p>
+                    </div>
+
+                    <div
+                        class="bg-cardDark/60 border border-gray-800/80 rounded-2xl p-6 shadow-xl hover:bg-cardDark hover:border-primary/50 transition duration-300 group">
+                        <div
+                            class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-dark transition duration-300">
+                            <i data-feather="type" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Subtítulos y Cortes</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Cortes limpios basados en retención y
+                            subtítulos estilizados de alta lectura.</p>
+                    </div>
+
+                    <div
+                        class="bg-cardDark/60 border border-gray-800/80 rounded-2xl p-6 shadow-xl hover:bg-cardDark hover:border-primary/50 transition duration-300 group">
+                        <div
+                            class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-dark transition duration-300">
+                            <i data-feather="sliders" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Colorización y Sonido</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Corrección de color cinematográfica, diseño de
+                            audio y masterización limpia.</p>
+                    </div>
+
+                    <div
+                        class="bg-cardDark/60 border border-gray-800/80 rounded-2xl p-6 shadow-xl hover:bg-cardDark hover:border-primary/50 transition duration-300 group">
+                        <div
+                            class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-dark transition duration-300">
+                            <i data-feather="image" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Diseño de Miniaturas</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Composiciones de alto CTR con excelente
+                            contraste para maximizar clics en YouTube.</p>
+                    </div>
+
+                    <div
+                        class="bg-cardDark/60 border border-gray-800/80 rounded-2xl p-6 shadow-xl hover:bg-cardDark hover:border-primary/50 transition duration-300 group">
+                        <div
+                            class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-dark transition duration-300">
+                            <i data-feather="mic" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Locución y Voz en Off</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Interpretación vocal profesional, nítida e
+                            ideal para narrativas comerciales o educativas.</p>
+                    </div>
+
+                    <div
+                        class="bg-cardDark/60 border border-gray-800/80 rounded-2xl p-6 shadow-xl hover:bg-cardDark hover:border-primary/50 transition duration-300 group">
+                        <div
+                            class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-dark transition duration-300">
+                            <i data-feather="cpu" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Integración con IA</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Uso de inteligencia artificial avanzada para
+                            optimización de flujos, generación de B-rolls y voz.</p>
+                    </div>
+
+                    <div
+                        class="bg-cardDark/60 border border-gray-800/80 rounded-2xl p-6 shadow-xl hover:bg-cardDark hover:border-primary/50 transition duration-300 group">
+                        <div
+                            class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-dark transition duration-300">
+                            <i data-feather="layout" class="w-10 h-10 mx-auto"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Desarrollo Frontend</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Estructuras web e interfaces de usuario
+                            impecables, rápidas y ultra-responsivas.</p>
+                    </div>
+
+                    <div
+                        class="bg-cardDark/60 border border-gray-800/80 rounded-2xl p-6 shadow-xl hover:bg-cardDark hover:border-primary/50 transition duration-300 group">
+                        <div
+                            class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-dark transition duration-300">
+                            <i data-feather="server" class="w-10 h-10 mx-auto"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Desarrollo Backend</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Construcción de arquitecturas lógicas estables,
+                            APIs potentes y bases de datos eficientes.</p>
+                    </div>
+
+                    <div
+                        class="bg-cardDark/60 border border-gray-800/80 rounded-2xl p-6 shadow-xl hover:bg-cardDark hover:border-primary/50 transition duration-300 group">
+                        <div
+                            class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-dark transition duration-300">
+                            <i data-feather="monitor" class="w-10 h-10 mx-auto"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Sistemas de Escritorio</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Software nativo robusto a medida diseñado para
+                            automatizar los procesos de tu negocio local.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacto" class="py-24 border-t border-gray-800/50 flex flex-col items-center">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight">¿Listo para llevar tu
+                        proyecto al siguiente nivel?</h2>
+                    <p class="text-gray-400 max-w-xl mx-auto">Estoy disponible para nuevos proyectos freelance y
+                        consultorías de desarrollo.</p>
+                </div>
+
+                <div
+                    class="w-full max-w-md bg-cardDark/80 backdrop-blur-md border border-gray-800 rounded-2xl p-8 shadow-2xl">
+                    <div class="flex flex-col gap-4">
+                        <a href="https://wa.me/584243311814" target="_blank" rel="noopener noreferrer"
+                            class="bg-primary hover:bg-cyan-400 text-dark font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-3 transition shadow-lg shadow-primary/10 transform active:scale-98">
+                            <i data-feather="message-circle" class="w-5 h-5"></i> +58 0424-3311814
+                        </a>
+                        <a href="mailto:pedro@pedrocreaciones.com"
+                            class="bg-gray-800 hover:bg-gray-750 text-white border border-gray-700 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-3 transition transform active:scale-98">
+                            <i data-feather="mail" class="w-5 h-5"></i> pedro@pedrocreaciones.com
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="bg-dark/95 py-10 border-t border-gray-800/40 text-center">
+        <p class="text-gray-500 text-sm font-medium">&copy; 2026 PedroCreaciones — Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script>feather.replace();</script>
+    <script>
+        feather.replace();
+    </script>
 </body>
 
 </html>
